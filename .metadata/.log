@@ -1,0 +1,534 @@
+!SESSION 2026-02-28 21:32:07.213 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=23.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-02-28 21:32:10.275
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-02-28 21:33:00.829
+!MESSAGE Logback config file: C:\Users\sjjp2\Desktop\JsServer\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-02-28 21:33:10.054
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\sjjp2'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:33:10.136
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:33:10.140
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:33:10.178
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:13.229
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.395.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:13.314
+!MESSAGE [Info]	[default] Policy watcher started for GitHub Copilot Plugin
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:13.465
+!MESSAGE [Info]	[certificates] Removed 6 expired certificates
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:13.805
+!MESSAGE [Info]	[GithubAvailableEmbeddingTypes] Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:14.271
+!MESSAGE [Info]	[AutoModelService] Auto model cache cleared due to token update
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:14.272
+!MESSAGE [Info]	[Semantic Search] Semantic search is disabled { reason: 'watchedFiles capability is not available' }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:33:14.273
+!MESSAGE [Info]	[CopilotMCP] MCP state changed from false to true
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:40:40.336
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:40:40.353
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:42:51.471
+!MESSAGE [Info] Language ID not found for extension: xml
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:52.182
+!MESSAGE [Info]	[fetchCompletions] Request e07e9b8c-4701-4aea-b694-d5f56d728d3f at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 243.47600000002421ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:52.183
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:52.378
+!MESSAGE [Info]	[fetchCompletions] Request e35783e9-2f96-49a6-b89c-5e4a9461b75c at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 141.49399999994785ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:52.476
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-02-28 21:42:52.558
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:245)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:591)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.apache.maven.model.io.ModelParseException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:96)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:74)
+	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:243)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEpilog(MXParser.java:2028)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1753)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1375)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:627)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:654)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:93)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-02-28 21:42:52.560
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:96)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:74)
+	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:243)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:591)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: start tag not allowed in epilog but got d (position: END_TAG seen ...</version>\r\n</project>\r\n\r\n<d... @8:3) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEpilog(MXParser.java:2028)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1753)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1375)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:627)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:654)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:93)
+	... 26 more
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:54.187
+!MESSAGE [Info]	[fetchCompletions] Request 0d07f2b0-7817-445c-af8c-a998486d5669 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 147.21230000001378ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:54.189
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:55.704
+!MESSAGE [Info]	[fetchCompletions] Request 285c59c1-cf78-4995-9139-2a1c22595633 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 153.8334999999497ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:55.801
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:55.950
+!MESSAGE [Info]	[fetchCompletions] Request f5ae9017-8f66-41e5-8942-2a759b6c7a70 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 140.40720000001602ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:56.801
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:56.976
+!MESSAGE [Info]	[fetchCompletions] Request 584fa440-5b63-4d7f-874b-079704f8a634 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 156.84389999997802ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:57.040
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:57.630
+!MESSAGE [Info]	[fetchCompletions] Request 2a605a6b-3cc6-4b8d-85db-53b2d8acbc78 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 128.46330000006128ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:42:57.640
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:02.145
+!MESSAGE [Info]	[fetchCompletions] Request 3608f677-97a1-4f76-b5ca-671bd168455b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 140.91929999995045ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:02.207
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:05.414
+!MESSAGE [Info]	[fetchCompletions] Request 13c480fb-5ce0-4233-90ee-b4146cfe861b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 139.16460000001825ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:05.501
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:05.709
+!MESSAGE [Info]	[fetchCompletions] Request e543955e-236a-4686-812c-883432f5a672 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 145.8328999999212ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:05.802
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [null]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:05.954
+!MESSAGE [Info]	[fetchCompletions] Request 8972e761-a975-49fe-8c10-7ac5bac5c33b at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 129.25360000005458ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:06.033
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:06.213
+!MESSAGE [Info]	[fetchCompletions] Request 46ccfab6-40de-4f42-ab84-1976cdb0b138 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 125.86389999999665ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:06.216
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:06.893
+!MESSAGE [Info]	[code-referencing] Calling Match
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:07.289
+!MESSAGE [Info]	[code-referencing] No match found
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:13.600
+!MESSAGE [Info]	[fetchCompletions] Request 69de1932-c1f9-417c-b441-5508f62b9f05 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 135.5421000000788ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:13.668
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:13.845
+!MESSAGE [Info]	[fetchCompletions] Request 8501e15a-da7d-4df8-b6f1-ad1bbf12df46 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 133.95449999999255ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:13.846
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:14.148
+!MESSAGE [Info]	[fetchCompletions] Request f529c7cf-1737-4079-997b-ddb236ff4735 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 137.29269999999087ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:43:14.238
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:43:19.631
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:43:19.638
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:43:20.950
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:43:20.953
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:43:28.891
+!MESSAGE [Info] Document is null for editor: pom.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:43:28.892
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/sjjp2/Desktop/JsServer/serverJs/pom.xml
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:44:51.076
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:44:51.080
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:44:57.245
+!MESSAGE [Info]	[fetchCompletions] Request 376a4150-84e1-4593-a310-c5aedccedfd0 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 156.84780000010505ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:44:57.246
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:44:58.832
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:44:58.835
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:06.491
+!MESSAGE [Info]	[fetchCompletions] Request e8890bc3-16ed-46ab-aee8-a5562899ddc6 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 164.39490000007208ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:06.674
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:06.869
+!MESSAGE [Info]	[fetchCompletions] Request cfc87346-6b6c-4877-9beb-cdd689daaad0 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 169.8229000000283ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-02-28 21:45:06.954
+!MESSAGE [Error]	[AsyncCompletionManager] [cfc87346-6b6c-4877-9beb-cdd689daaad0] Request errored with AbortError: The operation was aborted.
+    at AbortSignal.abortHandler (C:\snapshot\copilot-client\node_modules\@adobe\helix-fetch\src\fetch\index.js:106:17)
+    at AbortSignal.[nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+    at runAbort (node:internal/abort_controller:486:10)
+    at abortSignal (node:internal/abort_controller:457:3)
+    at AbortController.abort (node:internal/abort_controller:505:5)
+    at C:\snapshot\copilot-client\lib\src\networking.ts:105:19
+    at JSe.invoke (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:55:39)
+    at t.fire (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\events.js:117:36)
+    at $ee.cancel (C:\snapshot\copilot-client\node_modules\vscode-jsonrpc\lib\common\cancellation.js:41:31) {
+  type: 'aborted',
+  _name: 'AbortError'
+}
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:07.145
+!MESSAGE [Info]	[fetchCompletions] Request 6e0d8332-ed18-46ff-a629-9cd78ad2c741 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 187.40679999999702ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:07.338
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:07.502
+!MESSAGE [Info]	[fetchCompletions] Request e7368ccf-6706-41f7-b22b-bed7b81ba60c at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 132.90540000004694ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:45:08.094
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:45:13.241
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:45:13.244
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:45:49.425
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:45:49.428
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:46:50.494
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:46:50.495
+!MESSAGE [Info]	[fetchCompletions] Request d42db669-aa69-45ab-af54-34b1ccf2457e at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 155.7441000000108ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:46:50.935
+!MESSAGE [Info]	[fetchCompletions] Request 0754a0dc-e993-4497-a23d-42b00c7e6fbf at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 147.4641999999294ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:46:51.012
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:46:51.978
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:46:51.984
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:46:52.857
+!MESSAGE [Info] Document is null for editor: pom.xml
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 21:46:52.858
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/sjjp2/Desktop/JsServer/serverJs/pom.xml
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:46:53.223
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:46:53.226
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:22.237
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:22.240
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:55:24.666
+!MESSAGE [Info]	[fetchCompletions] Request 01a7a058-bfc1-49bd-bc1d-6fb8c196cd57 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 252.62529999995604ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-02-28 21:55:24.667
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:25.440
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:25.443
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:35.500
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-02-28 21:55:35.505
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 22:02:47.534
+!MESSAGE [Info] Document is null for editor: SimuladorUsuario.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 22:02:47.534
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/sjjp2/Desktop/JsServer/serverJs/src/main/java/src/SimuladorUsuario.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 22:34:11.077
+!MESSAGE [Info] Document is null for editor: GameServer.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-02-28 22:34:11.077
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/sjjp2/Desktop/JsServer/serverJs/src/main/java/src/GameServer.java
+!SESSION 2026-03-01 11:38:11.036 -----------------------------------------------
+eclipse.buildId=4.34.0.20241128-0756
+java.version=23.0.2
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-03-01 11:38:14.967
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-03-01 11:38:22.328
+!MESSAGE Logback config file: C:\Users\sjjp2\Desktop\JsServer\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.0.20241001-1350.xml
+
+!ENTRY org.eclipse.egit.ui 2 0 2026-03-01 11:38:30.856
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\sjjp2'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-03-01 11:38:30.943
+!MESSAGE [Info] Starting language server with binary lsp agent.
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-03-01 11:38:30.950
+!MESSAGE [Info] Found native binary in fragment bundle: com.microsoft.copilot.eclipse.core.agent.win32
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-03-01 11:38:31.050
+!MESSAGE [Info] Lsp agent started successfully.
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:33.551
+!MESSAGE [Info]	[lsp] GitHub Copilot Language Server 1.395.0 initialized
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:33.594
+!MESSAGE [Info]	[default] Policy watcher started for GitHub Copilot Plugin
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:33.700
+!MESSAGE [Info]	[certificates] Removed 6 expired certificates
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:34.085
+!MESSAGE [Info]	[GithubAvailableEmbeddingTypes] Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:34.701
+!MESSAGE [Info]	[AutoModelService] Auto model cache cleared due to token update
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:34.703
+!MESSAGE [Info]	[Semantic Search] Semantic search is disabled { reason: 'watchedFiles capability is not available' }
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:38:34.703
+!MESSAGE [Info]	[CopilotMCP] MCP state changed from false to true
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:07.166
+!MESSAGE [Info]	[fetchCompletions] Request 4d6fef39-bd1b-48b0-920a-523edc48ff17 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 345.3220999999903ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:07.264
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:07.465
+!MESSAGE [Info]	[fetchCompletions] Request df50e584-00ab-4e23-89a9-900a8d0716c1 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 176.1353999999992ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:07.550
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:08.035
+!MESSAGE [Info]	[fetchCompletions] Request 4a491b6b-748f-46b3-8649-7899ef96f6b4 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 168.69569999999658ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:08.091
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:09.916
+!MESSAGE [Info]	[fetchCompletions] Request ef8441de-3b8d-42c4-8560-b998240140a2 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 189.6747999999934ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:10.006
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:10.285
+!MESSAGE [Info]	[fetchCompletions] Request 4d500b25-4199-4542-970b-889ebc029d57 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 160.66250000000582ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:10.371
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:10.598
+!MESSAGE [Info]	[fetchCompletions] Request bea3c820-78b7-4d0e-8b72-0f7e2028da92 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 181.2103000000061ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:10.660
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:11.523
+!MESSAGE [Info]	[code-referencing] Calling Match
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:12.013
+!MESSAGE [Info]	[code-referencing] No match found
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:24.652
+!MESSAGE [Info]	[fetchCompletions] Request 60e974c5-94e2-43bb-8026-cd2c9e160528 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 208.67390000000887ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:24.656
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:24.920
+!MESSAGE [Info]	[fetchCompletions] Request 86a57763-5af3-4418-aaee-d3191c3fd2c1 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 155.5237999999954ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:25.000
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:25.957
+!MESSAGE [Info]	[fetchCompletions] Request d48d8b41-e73b-4eeb-81ef-fa58010b0254 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 159.19080000001122ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:26.037
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:26.612
+!MESSAGE [Info]	[fetchCompletions] Request 4e33612d-c967-44be-b988-c20df29c577f at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 158.1536000000051ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:26.673
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:28.863
+!MESSAGE [Info]	[fetchCompletions] Request 8c27e882-8f2b-478c-9e4b-cf751c567fd6 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 155.39680000000226ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:29.000
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:29.173
+!MESSAGE [Info]	[fetchCompletions] Request a9400a98-a636-4fc6-87d3-a86d88b632c5 at <https://proxy.individual.githubcopilot.com/v1/engines/gpt-41-copilot/completions> finished with 200 status after 158.41300000000047ms
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:29.240
+!MESSAGE [Info]	[streamChoices] solution 0 returned. finish reason: [stop]
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:31.369
+!MESSAGE [Info]	[code-referencing] Calling Match
+
+!ENTRY org.eclipse.lsp4e 1 0 2026-03-01 11:40:31.533
+!MESSAGE [Info]	[code-referencing] No match found
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-01 11:40:32.772
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2026-03-01 11:40:32.783
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-03-01 12:51:43.409
+!MESSAGE [Info] Document is null for editor: GameServer.java
+
+!ENTRY com.microsoft.copilot.eclipse 1 0 2026-03-01 12:51:43.410
+!MESSAGE [Info] Completion handler is refreshed for the document: file:///C:/Users/sjjp2/Desktop/JsServer/serverJs/src/main/java/src/GameServer.java

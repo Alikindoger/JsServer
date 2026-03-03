@@ -1,0 +1,57 @@
+import org.java_websocket.server.WebSocketServer;
+import org.java_websocket.WebSocket;
+import org.java_websocket.handshake.ClientHandshake;
+import java.net.InetSocketAddress;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class GameServer extends WebSocketServer {
+
+    // Guardamos a los jugadores usando su conexión como llave
+    private ConcurrentHashMap<WebSocket, String> jugadores = new ConcurrentHashMap<>();
+
+    public GameServer(int port) {
+        super(new InetSocketAddress(port));
+    }
+
+    @Override
+    public void onOpen(WebSocket conn, ClientHandshake handshake) {
+        System.out.println("Nuevo jugador conectado: " + conn.getRemoteSocketAddress());
+        // Podríamos asignar un ID único aquí
+    }
+
+    @Override
+    public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+        System.out.println("Jugador desconectado");
+        jugadores.remove(conn);
+        // Avisar a los demás que alguien se fue
+        broadcast("{\"tipo\": \"desconexion\", \"id\": \"" + conn.hashCode() + "\"}");
+    }
+
+    @Override
+    public void onMessage(WebSocket conn, String message) {
+        // Aquí recibimos el JSON del movimiento o interacción
+        // Por ahora, simplemente lo reenviamos a todos (broadcast)
+        // EXCEPTO a quien lo envió para evitar lag visual
+        for (WebSocket client : getConnections()) {
+            if (client != conn) {
+                client.send(message);
+            }
+        }
+    }
+
+    @Override
+    public void onError(WebSocket conn, Exception ex) {
+        ex.printStackTrace();
+    }
+
+    @Override
+    public void onStart() {
+        System.out.println("Servidor Java iniciado en el puerto: " + getPort());
+    }
+
+    public static void main(String[] args) {
+        int puerto = 8080;
+        GameServer server = new GameServer(puerto);
+        server.start();
+    }
+}
