@@ -1,0 +1,58 @@
+package src;
+
+import org.java_websocket.server.WebSocketServer;
+import org.java_websocket.WebSocket;
+import org.java_websocket.handshake.ClientHandshake;
+import java.net.InetSocketAddress;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class GameServer extends WebSocketServer {
+
+    private ConcurrentHashMap<WebSocket, String> jugadores = new ConcurrentHashMap<>();
+
+    public GameServer(int port) {
+        super(new InetSocketAddress(port));
+    }
+
+    @Override
+    public void onOpen(WebSocket conn, ClientHandshake handshake) {
+        System.out.println("Nuevo jugador conectado: " + conn.getRemoteSocketAddress());
+
+    }
+
+    @Override
+    public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+        System.out.println("Jugador desconectado");
+        jugadores.remove(conn);
+
+        broadcast("{\"tipo\": \"desconexion\", \"id\": \"" + conn.hashCode() + "\"}");
+    }
+
+    @Override
+    public void onMessage(WebSocket conn, String message) {
+    	
+    	System.out.println("Mensaje recibido de " + conn.getRemoteSocketAddress() + ": " + message);
+    	
+        for (WebSocket client : getConnections()) {
+            if (client != conn) {
+                client.send(message);
+            }
+        }
+    }
+
+    @Override
+    public void onError(WebSocket conn, Exception ex) {
+        ex.printStackTrace();
+    }
+
+    @Override
+    public void onStart() {
+        System.out.println("Servidor Java iniciado en el puerto: " + getPort());
+    }
+
+    public static void main(String[] args) {
+        int puerto = 8080;
+        GameServer server = new GameServer(puerto);
+        server.start();
+    }
+}

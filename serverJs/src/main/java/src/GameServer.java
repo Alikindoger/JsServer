@@ -1,10 +1,13 @@
 package src;
 
 import org.java_websocket.server.WebSocketServer;
+import org.json.JSONObject;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import java.net.InetSocketAddress;
 import java.util.concurrent.ConcurrentHashMap;
+
+
 
 public class GameServer extends WebSocketServer {
 
@@ -16,7 +19,7 @@ public class GameServer extends WebSocketServer {
 
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
-        System.out.println("Nuevo jugador conectado: " + conn.getRemoteSocketAddress());
+        System.out.println("Nuevo jugador conectado");
 
     }
 
@@ -24,23 +27,32 @@ public class GameServer extends WebSocketServer {
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
         System.out.println("Jugador desconectado");
         jugadores.remove(conn);
+        removeConnection(conn);
 
         broadcast("{\"tipo\": \"desconexion\", \"id\": \"" + conn.hashCode() + "\"}");
     }
 
     @Override
     public void onMessage(WebSocket conn, String message) {
-        // Aquí recibimos el JSON del movimiento o interacción
-        // Por ahora, simplemente lo reenviamos a todos (broadcast)
-        // EXCEPTO a quien lo envió para evitar lag visual
     	
-    	System.out.println("Mensaje recibido de " + conn.getRemoteSocketAddress() + ": " + message);
+    	//System.out.println("Mensaje recibido de " + conn.getRemoteSocketAddress() + ": " + message);
     	
-        for (WebSocket client : getConnections()) {
-            if (client != conn) {
-                client.send(message);
-            }
-        }
+    	JSONObject json = new JSONObject(message);
+        String tipo = json.getString("tipo");
+    	
+    	if(tipo.equals("NUEVO_JUGADOR")) {
+    		jugadores.put(conn, message);
+    		System.out.println("Registrado: " + json.getString("nombre"));
+    		
+    		broadcast(message);
+    		
+    		for( WebSocket client : jugadores.keySet()) {
+    			if(conn != client) {
+        			conn.send(jugadores.get(client));
+    			}
+    		}
+    	}
+        
     }
 
     @Override
