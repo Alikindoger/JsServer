@@ -41,10 +41,16 @@ public class GameServer extends WebSocketServer {
         String tipo = json.getString("tipo");
     	
     	if(tipo.equals("NUEVO_JUGADOR")) {
-    		jugadores.put(conn, message);
+    		
+    		int id = conn.hashCode();
+    		json.put("id", id);
+    		
+    		jugadores.put(conn, json.toString());
+    		
+    		
     		System.out.println("Registrado: " + json.getString("nombre"));
     		
-    		broadcast(message);
+    		broadcast(json.toString());
     		
     		for( WebSocket client : jugadores.keySet()) {
     			if(conn != client) {
@@ -52,7 +58,26 @@ public class GameServer extends WebSocketServer {
     			}
     		}
     	}
+    	else if(tipo.equals("MOVIMIENTO")) {
+    		
+    		json.put("id", conn.hashCode());
+    		
+    		broadcastExcept(conn,json.toString());
+    		
+    	}
+    	
+    	
         
+    }
+    
+    public void broadcastExcept(WebSocket conn, String data) {
+    	
+    	for( WebSocket client : jugadores.keySet()) {
+    		if(conn != client) {
+    			broadcast(data);
+    		}
+    	}
+    	
     }
 
     @Override
