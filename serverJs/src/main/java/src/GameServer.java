@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class GameServer extends WebSocketServer {
 
-    private ConcurrentHashMap<WebSocket, String> jugadores = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<WebSocket, PlayerSession> jugadores = new ConcurrentHashMap<>();
 
     public GameServer(int port) {
         super(new InetSocketAddress(port));
@@ -29,7 +29,7 @@ public class GameServer extends WebSocketServer {
         jugadores.remove(conn);
         removeConnection(conn);
 
-        broadcast("{\"tipo\": \"desconexion\", \"id\": \"" + conn.hashCode() + "\"}");
+        broadcast("{\"tipo\": \"DESCONEXION\", \"id\": \"" + conn.hashCode() + "\"}");
     }
 
     @Override
@@ -40,24 +40,31 @@ public class GameServer extends WebSocketServer {
     	
     	if(tipo.equals("NUEVO_JUGADOR")) {
     		
+    		//crear jugador en en el servidor
     		int id = conn.hashCode();
-    		json.put("id", id);
+    		PlayerSession jugador = new PlayerSession(id, json.getString("nombre"));
     		
-    		jugadores.put(conn, json.toString());
+    		jugador.x = json.getInt("x");
+    		jugador.y = json.getInt("y");
     		
+    		jugadores.put(conn, jugador);
+    		
+    		
+    		//responder al nuevo jugador
     		JSONObject bienvenida = new JSONObject();
             bienvenida.put("tipo", "BIENVENIDA");
             bienvenida.put("id", id);
             conn.send(bienvenida.toString());
     		
-    		
     		System.out.println("Registrado: " + json.getString("nombre"));
     		
-    		broadcast(json.toString());
+    		
+    		//notificar a los demás jugadores
+    		broadcastExcept(conn,jugador.toJSON().put("tipo", "NUEVO_JUGADOR").toString());
     		
     		for( WebSocket client : jugadores.keySet()) {
     			if(conn != client) {
-        			conn.send(jugadores.get(client));
+    				conn.send(jugadores.get(client).toJSON().put("tipo", "NUEVO_JUGADOR").toString());
     			}
     		}
     	}
@@ -77,7 +84,7 @@ public class GameServer extends WebSocketServer {
     	
     	for( WebSocket client : jugadores.keySet()) {
     		if(conn != client) {
-    			broadcast(data);
+    			client.send(data);
     		}
     	}
     	
