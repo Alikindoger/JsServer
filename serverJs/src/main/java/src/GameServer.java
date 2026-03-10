@@ -35,8 +35,6 @@ public class GameServer extends WebSocketServer {
     @Override
     public void onMessage(WebSocket conn, String message) {
     	
-    	//System.out.println("Mensaje recibido de " + conn.getRemoteSocketAddress() + ": " + message);
-    	
     	JSONObject json = new JSONObject(message);
         String tipo = json.getString("tipo");
     	
@@ -46,6 +44,11 @@ public class GameServer extends WebSocketServer {
     		json.put("id", id);
     		
     		jugadores.put(conn, json.toString());
+    		
+    		JSONObject bienvenida = new JSONObject();
+            bienvenida.put("tipo", "BIENVENIDA");
+            bienvenida.put("id", id);
+            conn.send(bienvenida.toString());
     		
     		
     		System.out.println("Registrado: " + json.getString("nombre"));
