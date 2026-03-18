@@ -26,55 +26,87 @@ public class GameServer extends WebSocketServer {
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
         System.out.println("Jugador desconectado");
-        jugadores.remove(conn);
-        removeConnection(conn);
+        
+        DBConnector.savePlayerInfo(jugadores.get(conn));
+
 
         broadcast("{\"tipo\": \"DESCONEXION\", \"id\": \"" + conn.hashCode() + "\"}");
     }
 
+    
+    //TO-DO: HACER EL SIGN IN EN EL VSCODE Y QUE SE CREE EL PERSONAJE ASOCIDADA A ESE USERID Y CON POSICION INICIAL
+    
+    
     @Override
     public void onMessage(WebSocket conn, String message) {
     	
     	JSONObject json = new JSONObject(message);
         String tipo = json.getString("tipo");
-    	
-    	if(tipo.equals("NUEVO_JUGADOR")) {
-    		
-    		//crear jugador en en el servidor
-    		int id = conn.hashCode();
-    		PlayerSession jugador = new PlayerSession(id, json.getString("nombre"));
-    		
-    		jugador.x = json.getInt("x");
-    		jugador.y = json.getInt("y");
-    		
-    		jugadores.put(conn, jugador);
-    		
-    		
-    		//responder al nuevo jugador
-    		JSONObject bienvenida = new JSONObject();
-            bienvenida.put("tipo", "BIENVENIDA");
-            bienvenida.put("id", id);
-            conn.send(bienvenida.toString());
-    		
-    		System.out.println("Registrado: " + json.getString("nombre"));
-    		
-    		
-    		//notificar a los demás jugadores
-    		broadcastExcept(conn,jugador.toJSON().put("tipo", "NUEVO_JUGADOR").toString());
-    		
-    		for( WebSocket client : jugadores.keySet()) {
-    			if(conn != client) {
-    				conn.send(jugadores.get(client).toJSON().put("tipo", "NUEVO_JUGADOR").toString());
-    			}
-    		}
-    	}
-    	else if(tipo.equals("MOVIMIENTO")) {
+
+    	if(tipo.equals("MOVIMIENTO")) {
     		
     		json.put("id", conn.hashCode());
+    		
+    		jugadores.get(conn).x = json.getInt("x");
+    		jugadores.get(conn).y = json.getInt("y");
     		
     		broadcastExcept(conn,json.toString());
     		
     	}
+    	else if (tipo.equals("LOGIN")) {
+    		String user = json.getString("usuario");
+            String pass = json.getString("password");
+            int userId = DBConnector.validateUser(user, pass);
+            if ( userId != -1)  { //testUser testPass
+				
+            	// LOGIN EXITOSO
+                int id = conn.hashCode();
+                PlayerSession session = DBConnector.loadUserPlayer(userId);
+                jugadores.put(conn, session);
+
+                JSONObject exito = new JSONObject();
+                exito.put("tipo", "LOGIN_EXITO");
+                exito.put("id", id);
+                exito.put("userId", session.userId);
+                exito.put("nombre", session.nombre);
+                exito.put("x", session.x);
+                exito.put("y", session.y);
+                conn.send(exito.toString());
+                
+                
+            	
+        		broadcastExcept(conn,session.toJSON().put("tipo", "NUEVO_JUGADOR").toString());
+                
+                //enviar resto de jugadores al nuevo jugador
+        		for( WebSocket client : jugadores.keySet()) {
+        			if(conn != client) {
+        				conn.send(jugadores.get(client).toJSON().put("tipo", "NUEVO_JUGADOR").toString());
+        			}
+        		}
+        		System.out.println(" LOGIN | Usuario: " + user + " Contraseña: " + pass);
+			} else {
+				// LOGIN FALLIDO
+				JSONObject fallo = new JSONObject();
+				fallo.put("tipo", "LOGIN_FALLIDO");
+				conn.send(fallo.toString());
+				System.out.println(" LOGIN FALLIDO | Usuario: " + user + " Contraseña: " + pass);
+            }
+            
+    	}
+    	else if(tipo.equals("REGISTRO")) {
+			String user = json.getString("usuario");
+			String pass = json.getString("password");
+			String email = json.getString("email");
+			
+			boolean exito = DBConnector.signInUser(user, pass, email);
+			
+			JSONObject respuesta = new JSONObject();
+			respuesta.put("tipo", "REGISTRO_RESPUESTA");
+			respuesta.put("exito", exito);
+			conn.send(respuesta.toString());
+			
+			System.out.println(" REGISTRO | Usuario: " + user + " Contraseña: " + pass + " Email: " + email);
+		}
     	
     	
         
@@ -103,6 +135,6 @@ public class GameServer extends WebSocketServer {
     public static void main(String[] args) {
         int puerto = 8080;
         GameServer server = new GameServer(puerto);
-        server.start();
+        server.start();  
     }
 }
